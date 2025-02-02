@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Email Tracker</h1>
+
+        <!-- Email Form -->
+        <div class="card">
+            <h2>Send Email</h2>
+            <form id="emailForm">
+                <label for="recipients">Recipient Emails (comma-separated):</label>
+                <input type="text" id="recipients" required>
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" required></textarea>
+
+                <button type="submit">Send Email</button>
+            </form>
+            <p id="statusMessage"></p>
+        </div>
+
+        <!-- Email Log Table -->
+        <div class="card">
+            <h2>Email Tracking Status</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Recipient</th>
+                        <th>Subject</th>
+                        <th>Sent Time</th>
+                        <th>Delivered Time</th>
+                        <th>Opened Time</th>
+                    </tr>
+                </thead>
+                <tbody id="emailTableBody">
+                    <!-- Data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
